@@ -1,0 +1,23 @@
+s=tf('s');
+B=1;
+retro=1/(0.5*s+1);
+Gr=(1)/(2*s+1);
+
+%PI
+CPI=1.148*((1+2*s)/s);
+%% end here %% 
+
+%PID
+CPID=1.659*(((1+0.63*s)*(1+0.92*s))/s);
+
+%% end here %%
+
+%Dos Gardos de Libertad
+C2=2.862*(1+11*s);%PD
+Gv=Gr/(1+(Gr*C2*retro));
+C1=67.08*(1+9.5e-6*s);
+
+%%end here%%
+
+sisotool(Gr)
+                                                                                                                                                                         
